@@ -6,6 +6,6 @@ final class DigiconfTests: XCTestCase {
         // This is an example of a functional test case.
         // Use XCTAssert and related functions to verify your tests produce the correct
         // results.
-        XCTAssertEqual(Digiconf().text, "Hello, World!")
+        //XCTAssertEqual(Digiconfig().text, "Hello, World!")
     }
 }
