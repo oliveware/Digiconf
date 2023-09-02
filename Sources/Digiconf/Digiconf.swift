@@ -56,4 +56,9 @@ public struct Digiconfig {
         haut = haut * s
         large = large * s
     }
+    
+    public mutating func size(_ w:CGFloat, _ h:CGFloat) {
+        haut = h
+        large = w
+    }
 }
