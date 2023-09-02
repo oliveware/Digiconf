@@ -51,4 +51,9 @@ public struct Digiconfig {
         nul = conf.nul
         fond = conf.fond
     }
+    
+    public mutating func scale(_ s:CGFloat) {
+        haut = haut * s
+        large = large * s
+    }
 }
