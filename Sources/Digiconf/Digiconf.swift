@@ -29,7 +29,7 @@ public struct Digivalue {
 
 public struct Digiconfig {
     public var haut:CGFloat = 100
-    public var large:CGFloat = 35
+    public var large:CGFloat = 50
     public var lun = Color.yellow
     public var nul = Color.gray
     public var fond = Color.black
