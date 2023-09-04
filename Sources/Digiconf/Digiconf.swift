@@ -35,8 +35,8 @@ public struct Digiconfig {
     public var fond = Color.black
     
     public var weight = Font.Weight.bold
-    public var font: CTFont {
-        CTFontCreateUIFontForLanguage(.system, haut*2,  nil)!
+    public var font: Font {
+        Font( CTFontCreateUIFontForLanguage(.system, haut*2,  nil)! )
     }
     
     public init() {}
