@@ -36,12 +36,12 @@ public struct Digiconfig {
     
     public var weight = Font.Weight.bold
     public var font: Font {
-        Font( CTFontCreateUIFontForLanguage(.system, haut*2,  nil)! )
+        Font( CTFontCreateUIFontForLanguage(.system, haut,  nil)! )
     }
     
     public init() {}
     
-    public init(_ h:Int, _ w:Int, _ u:Color, _ z:Color, _ f:Color) {
+    public init(_ w:Int, _ h:Int, _ u:Color = .yellow, _ z:Color = .gray, _ f:Color = .black) {
         haut = CGFloat(h)
         large = CGFloat(w)
         lun = u
@@ -57,13 +57,18 @@ public struct Digiconfig {
         fond = conf.fond
     }
     
-    public mutating func scale(_ s:CGFloat) {
-        haut = haut * s
-        large = large * s
+    public func scale(_ s:CGFloat) -> Digiconfig {
+        let h = Int(haut * s)
+        let w = Int(large * s)
+        return Digiconfig(w, h, lun, nul, fond)
     }
     
-    public mutating func size(_ w:CGFloat, _ h:CGFloat) {
-        haut = h
-        large = w
+    // change size with same colors
+    public func size(_ w:Int, _ h:Int) -> Digiconfig {
+        return Digiconfig(w, h, lun, nul, fond)
+    }
+    // change colors with same size
+    public func colore(_ colors:[Color]) -> Digiconfig {
+        return Digiconfig(Int(large),Int(haut),colors[0],colors[1],colors[2])
     }
 }
