@@ -41,9 +41,9 @@ public struct Digiconfig {
     
     public init() {}
     
-    public init(_ w:Int, _ h:Int, _ u:Color = .yellow, _ z:Color = .gray, _ f:Color = .black) {
-        haut = CGFloat(h)
-        large = CGFloat(w)
+    public init(_ w:CGFloat, _ h:CGFloat, _ u:Color = .yellow, _ z:Color = .gray, _ f:Color = .black) {
+        haut = h
+        large = w
         lun = u
         nul = z
         fond = f
@@ -58,17 +58,17 @@ public struct Digiconfig {
     }
     
     public func scale(_ s:CGFloat) -> Digiconfig {
-        let h = Int(haut * s)
-        let w = Int(large * s)
+        let h = haut * s
+        let w = large * s
         return Digiconfig(w, h, lun, nul, fond)
     }
     
     // change size with same colors
-    public func size(_ w:Int, _ h:Int) -> Digiconfig {
+    public func size(_ w:CGFloat, _ h:CGFloat) -> Digiconfig {
         return Digiconfig(w, h, lun, nul, fond)
     }
     // change colors with same size
     public func colore(_ colors:[Color]) -> Digiconfig {
-        return Digiconfig(Int(large),Int(haut),colors[0],colors[1],colors[2])
+        return Digiconfig(large, haut, colors[0],colors[1],colors[2])
     }
 }
