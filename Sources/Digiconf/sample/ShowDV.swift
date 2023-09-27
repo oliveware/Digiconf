@@ -7,12 +7,22 @@
 
 import SwiftUI
 
-struct SwiftUIView: View {
+struct ShowDV: View {
+    
+    var value: Int = 7
+    var base: Int = 12
+    var power: Int = -1
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        Text("\(Digivalue(value,base,power).double)").font(.title)
     }
 }
 
 #Preview {
-    SwiftUIView()
+    GroupBox {
+        VStack(spacing:10) {
+            ShowDV()
+            ShowDV(value:125)
+        }
+    }
 }

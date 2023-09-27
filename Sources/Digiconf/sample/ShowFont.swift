@@ -12,24 +12,31 @@ struct ShowFont: View {
     var config = Digiconfig()
     
     var body: some View {
-        Text("h:\(Int(config.haut)) - w:\(Int(config.large))")
-            .font(config.font)
+        HStack {
+            Text("h:\(Int(config.haut)) - w:\(Int(config.large))")
+                .padding(5)
+                .font(config.font)
+                .foregroundColor(config.lun)
+                .background(config.nul)
+        }.padding(10).background(config.fond)
     }
 }
 
 struct ShowFont_Previews: PreviewProvider {
     static var previews: some View {
-        VStack {
-            ShowFont()
-            
-            ShowFont(
-                config:Digiconfig(30,40))
-            ShowFont(
-                config:Digiconfig().scale(0.5))
-            ShowFont(
-                config:Digiconfig().scale(0.4))
-            ShowFont(
-                config:Digiconfig().size(10,10))
+        GroupBox {
+            VStack {
+                ShowFont()
+                
+                ShowFont(
+                    config:Digiconfig(30,40).colore([.green,.brown,.pink]))
+                ShowFont(
+                    config:Digiconfig().scale(0.5))
+                ShowFont(
+                    config:Digiconfig().scale(0.4).colore([.green,.blue,.brown]))
+                ShowFont(
+                    config:Digiconfig().size(10,10))
+            }.padding(10)
         }
     }
 }
