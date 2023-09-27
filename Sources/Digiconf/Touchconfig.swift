@@ -30,6 +30,6 @@ extension View {
 }
 
 #Preview {
-    Button("essai"){}
-        .configTouch(Digiconfig().size(70,30))
+    Button("8"){}
+        .configTouch(Digiconfig())
 }

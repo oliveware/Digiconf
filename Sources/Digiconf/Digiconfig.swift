@@ -2,7 +2,7 @@ import SwiftUI
 
 public struct Digiconfig {
     public var haut:CGFloat = 50
-    public var large:CGFloat = 25
+    public var large:CGFloat = 50
     public var fore = Color.yellow
     public var back = Color.blue
     public var bord = Color.pink
@@ -12,7 +12,7 @@ public struct Digiconfig {
     
     // public var weight = Font.Weight.bold
     public var font: Font {
-        Font( CTFontCreateUIFontForLanguage(.system, (haut+large)/4,  nil)! )
+        Font( CTFontCreateUIFontForLanguage(.system, (haut+large)/2,  nil)! )
     }
     
     public init() {}
