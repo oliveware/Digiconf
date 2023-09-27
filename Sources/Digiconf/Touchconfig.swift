@@ -7,12 +7,29 @@
 
 import SwiftUI
 
-struct SwiftUIView: View {
-    var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+public struct Touchconfig: ButtonStyle {
+    @Environment(\.isEnabled) private var isEnabled
+    var config = Digiconfig()
+    
+    public func makeBody(configuration: Self.Configuration) -> some View {
+    configuration.label
+            .frame(width: config.large, height: config.haut)
+            .font(config.font)
+            .padding(config.padding)
+            .foregroundColor(configuration.isPressed ? config.press : config.fore)
+            .background(isEnabled ? config.back : config.disabled)
+        .scaleEffect(configuration.isPressed ? 0.95 : 1.0)
+        .cornerRadius(8)
+    }
+}
+
+extension View {
+    func configTouch(_ config:Digiconfig ) -> some View {
+        self.buttonStyle(Touchconfig(config:config))
     }
 }
 
 #Preview {
-    SwiftUIView()
+    Button("essai"){}
+        .configTouch(Digiconfig().size(70,30))
 }

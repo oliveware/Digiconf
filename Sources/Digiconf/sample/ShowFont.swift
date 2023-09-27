@@ -16,9 +16,9 @@ struct ShowFont: View {
             Text("h:\(Int(config.haut)) - w:\(Int(config.large))")
                 .padding(5)
                 .font(config.font)
-                .foregroundColor(config.lun)
-                .background(config.nul)
-        }.padding(10).background(config.fond)
+                .foregroundColor(config.fore)
+                .background(config.back)
+        }.padding(10).background(config.bord)
     }
 }
 
@@ -29,11 +29,11 @@ struct ShowFont_Previews: PreviewProvider {
                 ShowFont()
                 
                 ShowFont(
-                    config:Digiconfig(30,40).colore([.green,.brown,.pink]))
+                    config:Digiconfig(30,40).colore([.green,.brown,.pink,.purple,.cyan]))
                 ShowFont(
                     config:Digiconfig().scale(0.5))
                 ShowFont(
-                    config:Digiconfig().scale(0.4).colore([.green,.blue,.brown]))
+                    config:Digiconfig().scale(0.4).colore([.green,.blue,.brown,.green,.gray]))
                 ShowFont(
                     config:Digiconfig().size(10,10))
             }.padding(10)
