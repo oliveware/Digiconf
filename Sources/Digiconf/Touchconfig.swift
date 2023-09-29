@@ -11,6 +11,10 @@ public struct Touchconfig: ButtonStyle {
     @Environment(\.isEnabled) private var isEnabled
     var config = Digiconfig()
     
+    public init(_ conf:Digiconfig) {
+        config = conf
+    }
+    
     public func makeBody(configuration: Self.Configuration) -> some View {
     configuration.label
             .frame(width: config.large, height: config.haut)
@@ -25,11 +29,11 @@ public struct Touchconfig: ButtonStyle {
 
 extension View {
     public func configTouch(_ config:Digiconfig ) -> some View {
-        self.buttonStyle(Touchconfig(config:config))
+        self.buttonStyle(Touchconfig(config))
     }
     public func parambar(_ cote:CGFloat) -> some View {
         let config = Digiconfig(cote,cote,10,.black,.gray )
-        return self.buttonStyle(Touchconfig(config:config))
+        return self.buttonStyle(Touchconfig(config))
     }
 }
 
