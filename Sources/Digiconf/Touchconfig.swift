@@ -24,12 +24,20 @@ public struct Touchconfig: ButtonStyle {
 }
 
 extension View {
-    func configTouch(_ config:Digiconfig ) -> some View {
+    public func configTouch(_ config:Digiconfig ) -> some View {
         self.buttonStyle(Touchconfig(config:config))
+    }
+    public func parambar(_ cote:CGFloat) -> some View {
+        let config = Digiconfig(cote,cote,10,.black,.gray )
+        return self.buttonStyle(Touchconfig(config:config))
     }
 }
 
 #Preview {
-    Button("8"){}
-        .configTouch(Digiconfig())
+    VStack {
+        Button("8"){}
+            .configTouch(Digiconfig())
+        Button(action:{}){Image(systemName: "trash")}
+            .parambar(30)
+    }.padding(10)
 }
