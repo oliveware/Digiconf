@@ -17,8 +17,11 @@ struct ShowFont: View {
                 .padding(5)
                 .font(config.font)
                 .foregroundColor(config.fore)
-                .background(config.back)
-        }.padding(10).background(config.bord)
+                .background(config.mid)
+        }.padding(10)
+        .background(config.back)
+        .border(config.bord, width: 3)
+            
     }
 }
 
