@@ -36,10 +36,12 @@ struct ShowFont_Previews: PreviewProvider {
                 ShowFont(
                     config:Digiconfig().scale(0.5))
                 ShowFont(
-                    config:Digiconfig().scale(0.4).colore([.green,.blue,.brown,.green,.gray]))
+                    config:Digiconfig().scale(1.5).colore([.red,.clear,.blue,.brown,.green,.gray]))
                 ShowFont(
-                    config:Digiconfig().size(10,10))
-            }.padding(10)
+                    config:Digiconfig().size(20,20))
+                ShowFont(
+                    config:Digiconfig().scalefont(0.4))
+            }.padding(0)
         }
     }
 }
