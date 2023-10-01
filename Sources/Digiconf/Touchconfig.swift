@@ -32,8 +32,8 @@ extension View {
         self.buttonStyle(Touchconfig(config))
     }
     public func parambar(_ cote:CGFloat) -> some View {
-        let config = Digiconfig(cote,cote,10,.black,.gray )
-        return self.buttonStyle(Touchconfig(config))
+        let config = Digiconfig(cote,cote,10,.white,.clear,.gray )
+        return configTouch(config)
     }
 }
 
