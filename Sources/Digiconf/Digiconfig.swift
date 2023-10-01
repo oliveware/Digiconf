@@ -4,7 +4,7 @@ public struct Digiconfig {
     public var haut:CGFloat = 50
     public var large:CGFloat = 50
     public var fore = Color.yellow
-    public var back = Color.blue
+    public var back = Color.clear
     public var bord = Color.pink
     public var press = Color.green
     public var disabled = Color.gray
