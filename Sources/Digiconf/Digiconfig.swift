@@ -13,7 +13,7 @@ public struct Digiconfig {
     
     // public var weight = Font.Weight.bold
     public var font: Font {
-        Font( CTFontCreateUIFontForLanguage(.system, sqrt(haut*large)/2.44,  nil)! )
+        Font( CTFontCreateUIFontForLanguage(.system, sqrt(haut*large)/4,  nil)! )
     }
     
     public init() {}
