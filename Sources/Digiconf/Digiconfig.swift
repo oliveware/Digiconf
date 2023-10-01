@@ -11,16 +11,16 @@ public struct Digiconfig {
     public var disabled = Color.gray
     public var padding:CGFloat = 0
     
-    var fontscale: CGFloat = 0.5
+    var fontscale: CGFloat = 1
     
     // public var weight = Font.Weight.bold
-    public var font: Font {
-        Font( CTFontCreateUIFontForLanguage(.system, sqrt(haut*large) * fontscale,  nil)! )
+    public var font: Font
+    
+    public init() {
+        font = Font( CTFontCreateUIFontForLanguage(.system, sqrt(haut*large) * fontscale,  nil)! )
     }
     
-    public init() {}
-    
-    public init(_ w:CGFloat, _ h:CGFloat, _ s:CGFloat = 0,
+    public init(_ w:CGFloat, _ h:CGFloat, _ s:CGFloat = 5,
                 _ f:Color = .yellow, _ m:Color = .clear, _ b:Color = .blue, _ l:Color = .black,
                 _ p:Color = .green, _ d:Color = .gray) {
         haut = h
@@ -32,6 +32,7 @@ public struct Digiconfig {
         press = p
         disabled = d
         padding = s
+        font = Font( CTFontCreateUIFontForLanguage(.system, sqrt(haut*large) * fontscale,  nil)! )
     }
     
     public init (_ conf:Digiconfig, _ fs:CGFloat = 1) {
@@ -45,6 +46,7 @@ public struct Digiconfig {
         disabled = conf.disabled
         padding = conf.padding
         fontscale = fs
+        font = Font( CTFontCreateUIFontForLanguage(.system, sqrt(haut*large) * fontscale,  nil)! )
     }
     
     public func scalefont(_ fs:CGFloat) -> Digiconfig {
